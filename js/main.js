@@ -36,7 +36,142 @@
 
 // 10. Создать игру. Задача: создать программу, которая запрашивает у пользователя данные для 2х героев(сила(макс 100), ловкость(макс 100), стихия(огонь, земля, вода, воздух)), также каждому герою присваивается имя по умолчанию(герой 1, герой 2), каждая стихия повышает силу героя на определенное количество пунктов(огонь +20 к силе, воздух +15 к силе, вода +10 к силе, земля +5 к силе), после добавления героев в бд, устраивать между ними бой и выявлять победителя по следующим характеристикам(победил тот, у кого больше силы, если силы равны, побеждает тот, у кого больше ловкости, если все данные равны, то ничья), выводить информацию в виде имени победителя либо просто сообщение типа: Ничья, в том случае если победителя нет(решитьс помощью функций)
 
-// let hero2 = +prompt("Enter hero 2").split(" ");
+// function Hero(name, strength, agility, element) {
+//   this.name = name;
+//   this.strength = strength;
+//   this.agility = agility;
+//   this.element = element;
+// }
+// function createHeroes() {
+//   const hero1Name = prompt("Введите имя для героя:");
+//   const hero1Strength = +prompt("задайте силу герою 1(0-100):");
+//   const hero1Agility = +prompt("задайте ловкость герою 1 (0-100):");
+//   const hero1Element = prompt(
+//     "задайте стихию герою 1 (fire, earth, water, air):"
+//   );
+
+//   const hero2Name = prompt("Введите имя для героя: 2");
+//   const hero2Strength = +prompt("задайте силу герою 2:(0-100):");
+//   const hero2Agility = +prompt("задайте ловкость герою 2(0-100):");
+//   const hero2Element = prompt(
+//     "задайте стихию герою 2(fire, earth, water, air):"
+//   );
+
+//   const hero1 = new Hero(hero1Name, hero1Strength, hero1Agility, hero1Element);
+//   const hero2 = new Hero(hero2Name, hero2Strength, hero2Agility, hero2Element);
+
+//   return [hero1, hero2];
+// }
+
+// function applyElementBonus(hero) {
+//   switch (hero.element) {
+//     case "fire":
+//       hero.strength += 20;
+//       break;
+//     case "air":
+//       hero.strength += 15;
+//       break;
+//     case "water":
+//       hero.strength += 10;
+//       break;
+//     case "earth":
+//       hero.strength += 5;
+//       break;
+//   }
+// }
+// function determineWinner(hero1, hero2) {
+//   if (hero1.strength > hero2.strength) {
+//     return hero1.name;
+//   } else if (hero1.strength === hero2.strength) {
+//     if (hero1.agility > hero2.agility) {
+//       return hero1.name;
+//     } else if (hero1.agility === hero2.agility) {
+//       return "Draw";
+//     } else {
+//       return hero2.name;
+//     }
+//   } else {
+//     return hero2.name;
+//   }
+// }
+
+// function startGame() {
+//   const heroes = createHeroes();
+//   applyElementBonus(heroes[0]);
+//   applyElementBonus(heroes[1]);
+//   const winner = determineWinner(heroes[0], heroes[1]);
+//   console.log(`Выиграл ${winner}!`);
+// }
+
+// startGame();
+
+// второй вариант без функции
+// let hero1 = {};
+// let hero2 = {};
+// let heroAdd1 = prompt(
+//   "Напишите характеристики вашего героя: сила ловкость, стихия (через пробел)"
+// ).split(" ");
+// hero1 = {
+//   name: "Hero_1",
+//   strange: +heroAdd1[0],
+//   agility: +heroAdd1[1],
+//   element: heroAdd1[2],
+// };
+// let heroAdd2 = prompt(
+//   "Напишите характеристики вашего героя: сила ловкость, стихия (через пробел)"
+// ).split(" ");
+// hero2 = {
+//   name: "Hero_2",
+//   strange: +heroAdd2[0],
+//   agility: +heroAdd2[1],
+//   element: heroAdd2[2],
+// };
+// switch (heroAdd1[2]) {
+//   case "огонь":
+//     hero1.strange += 20;
+//     break;
+//   case "воздух":
+//     hero1.strange += 15;
+//     break;
+//   case "вода":
+//     hero1.strange += 10;
+//     break;
+//   case "земля":
+//     hero1.strange += 5;
+//     break;
+// }
+// switch (heroAdd2[2]) {
+//   case "огонь":
+//     hero2.strange += 20;
+//     break;
+//   case "воздух":
+//     hero2.strange += 15;
+//     break;
+//   case "вода":
+//     hero2.strange += 10;
+//     break;
+//   case "земля":
+//     hero2.strange += 5;
+//     break;
+// }
+
+// let fight = confirm("Хотите устроить бой между героями ?");
+// if (fight) {
+//   if (hero1.strange > hero2.strange) {
+//     alert(`${hero1.name} победил`);
+//   } else if (hero2.strange > hero1.strange) {
+//     alert(`${hero2.name} победил`);
+//   } else if (hero2.strange == hero1.strange) {
+//     if (hero1.agility > hero2.agility) {
+//       alert(`${hero1.name} победил`);
+//     } else if (`hero2.agility == hero1.agility`) {
+//       alert("Ничья");
+//     } else {
+//       alert(`${hero2.name} победил`);
+//     }
+//   }
+// }
+// console.log(hero1, hero2);
 
 // 1. Дан список товаров следующего вида: [
 //     {title: 'Samsung', price: 1000, count: 3, color: ['black', 'white', 'blue']},
